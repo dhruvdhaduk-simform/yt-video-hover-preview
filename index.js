@@ -1,6 +1,8 @@
 "use strict";
 
 const inputForm = document.querySelector("#input-form");
+const display = document.querySelector("#display");
+const thumbnail = document.querySelector("#thumbnail");
 
 inputForm.url.value = "https://youtu.be/2sdXSczmvNc";
 inputForm.url.select();
@@ -39,6 +41,9 @@ inputForm.addEventListener("submit", (e) => {
         alert("Invlid Link");
         return;
     }
+
+    display.style.display = "block";
+    thumbnail.src = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
 
     window?.player?.destroy();
 
