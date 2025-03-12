@@ -77,6 +77,11 @@ button:active {
     overflow: hidden;
 }
 
+#iframe-container {
+    width: 100%;
+    height: 100%;
+}
+
 .thumbnail-container {
     position: absolute;
     top: 0;
