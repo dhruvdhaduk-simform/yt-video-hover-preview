@@ -5,6 +5,7 @@ const display = document.querySelector("#display");
 const thumbnail = document.querySelector("#thumbnail");
 const videoControllers = document.querySelector("#video-controllers");
 const progressbar = document.querySelector("#progressbar");
+const muteBtn = document.querySelector("#mutebtn");
 
 videoControllers.addEventListener("mouseenter", function(e) {
     window.player?.playVideo();
@@ -76,6 +77,19 @@ inputForm.addEventListener("submit", (e) => {
         progressbar.max = window.player?.getDuration?.();
         progressbar.value = 0;
     });
+});
+
+muteBtn.addEventListener("click", () => {
+    if(!window.player?.setVolume) return;
+
+    if (muteBtn.textContent.trim() === "Mute") {
+        window.player.setVolume(0);
+        muteBtn.textContent = "Unmute";
+    }
+    else {
+        window.player.setVolume(100);
+        muteBtn.textContent = "Mute";
+    }
 });
 
 setInterval(() => {

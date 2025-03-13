@@ -133,3 +133,17 @@ button:active {
     bottom: 0px;
     width: 100%;
 }
+
+#mutebtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
