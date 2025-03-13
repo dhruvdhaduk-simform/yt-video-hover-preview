@@ -3,6 +3,15 @@
 const inputForm = document.querySelector("#input-form");
 const display = document.querySelector("#display");
 const thumbnail = document.querySelector("#thumbnail");
+const videoControllers = document.querySelector("#video-controllers");
+
+videoControllers.addEventListener("mouseenter", function(e) {
+    window.player?.playVideo();
+});
+
+videoControllers.addEventListener("mouseleave", function(e) {
+    window.player?.pauseVideo();
+});
 
 inputForm.url.value = "https://youtu.be/2sdXSczmvNc";
 inputForm.url.select();
@@ -60,9 +69,4 @@ inputForm.addEventListener("submit", (e) => {
             rel: 0,
         },
     });
-
-    window.player.addEventListener("onReady", () => {
-        window.player?.playVideo();
-    });
-
 });
