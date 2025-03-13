@@ -4,6 +4,7 @@ const inputForm = document.querySelector("#input-form");
 const display = document.querySelector("#display");
 const thumbnail = document.querySelector("#thumbnail");
 const videoControllers = document.querySelector("#video-controllers");
+const progressbar = document.querySelector("#progressbar");
 
 videoControllers.addEventListener("mouseenter", function(e) {
     window.player?.playVideo();
@@ -69,4 +70,25 @@ inputForm.addEventListener("submit", (e) => {
             rel: 0,
         },
     });
+
+    window.player.addEventListener("onReady", () => {
+        progressbar.min = 0;
+        progressbar.max = window.player?.getDuration?.();
+        progressbar.value = 0;
+    });
+});
+
+setInterval(() => {
+    if (window.player?.getCurrentTime) {
+        let currentProgress = window.player?.getCurrentTime();
+        if (currentProgress) {
+            progressbar.value = currentProgress;
+        }
+    }
+}, 1000);
+
+progressbar.addEventListener("change", () => {
+    if (window.player?.seekTo) {
+        window.player.seekTo(progressbar.value);
+    }
 });

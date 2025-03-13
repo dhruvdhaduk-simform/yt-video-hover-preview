@@ -125,3 +125,11 @@ button:active {
 .video-controllers:hover + * {
     display: none;
 }
+
+#progressbar {
+    cursor: pointer;
+    accent-color: red;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
