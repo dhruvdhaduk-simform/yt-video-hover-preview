@@ -14,7 +14,7 @@ videoControllers.addEventListener("mouseleave", function(e) {
     window.player?.pauseVideo();
 });
 
-inputForm.url.value = "https://youtu.be/2sdXSczmvNc";
+inputForm.url.value = "https://youtu.be/aXOChLn5ZdQ";
 inputForm.url.select();
 inputForm.url.focus();
 
