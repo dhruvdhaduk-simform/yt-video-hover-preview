@@ -130,8 +130,11 @@ button:active {
     cursor: pointer;
     accent-color: red;
     position: absolute;
-    bottom: 0px;
-    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    width: calc(100% - 1rem);
 }
 
 #mutebtn {
